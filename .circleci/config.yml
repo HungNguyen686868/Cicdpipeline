@@ -131,9 +131,15 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      # Docker image here that supports AWS CLI
+      - image: amazon/aws-cli
     steps:
-      # Checkout code from git
+      - checkout
+      - run: 
+          name: Install tar
+          command: yum install -y tar
+      - run: 
+          name: Install gzip
+          command: yum install -y gzip
       - run:
           name: Ensure back-end infrastructure exists
           command: |
