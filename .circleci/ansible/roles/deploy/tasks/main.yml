@@ -1,16 +1,24 @@
----
-- name: Copy compiled files
-  unarchive:
-    src: /root/project/backend.tar.gz
-    dest: /home/ubuntu/
+- name: create directory 
+  become: yes
+  file: 
+    path: /home/app
+    state: directory
+    mode: 0755
 
-- name: Build backend
-  ignore_errors: yes
+- name: copy artifact to app directory
+  become: yes
+  copy: 
+    src: ~/project/artifact.tar.gz
+    dest: /home/app/artifact.tar.gz
+
+- name: uncompress
+  become: yes
   shell: |
-    cd /home/ubuntu/backend
-    ls -la
-    npm i
-    pm2 stop backend
-    pm2 delete backend
-    pm2 start --name backend npm -- start
-    pm2 ls
+    cd /home/app
+    tar -vxf artifact.tar.gz
+- name: build and start node
+  shell: |
+    cd /home/app
+    npm install
+    pm2 stop default
+    pm2 start npm -- start
