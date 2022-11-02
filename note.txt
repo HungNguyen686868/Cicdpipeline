@@ -1,0 +1,3 @@
+dont know why even i authenticad all user and password is true. But email dont send:
+I generate email password in setting email to allow Prometheus server send email and use this password to config in alert-messenger.yml 
+i check all user and password is true.
