@@ -1,3 +1,4 @@
 urls.txt
 - GitHub: https://github.com/HungNguyen686868/cicdpipeline
 - S3: http://udapeople-62db1ae.s3.amazonaws.com/index.html#/employees
+- CloudFront: http://d33uih6sxeym7a.cloudfront.net/#/employees
