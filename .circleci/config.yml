@@ -158,7 +158,7 @@ jobs:
               --query 'Reservations[*].Instances[*].PublicIpAddress' \
               --filters "Name=tag:aws:cloudformation:stack-name,Values=udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --output text)
-            curl https://kvdb.io/ArXBxAZHaPfYY2yNQ9XFkk/BACKEND_URL --request PUT -d "http://${BACKEND_IP}:3030"
+            curl https://kvdb.io/ArXBxAZHaPfYY2yNQ9XFkk/BACKEND_URL --request PUT -d "https://${BACKEND_IP}:3030"
       - run:
           name: Ensure front-end infrastructure exist
           command: |
