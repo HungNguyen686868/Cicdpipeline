@@ -1,3 +1,3 @@
 urls.txt
 - GitHub: https://github.com/HungNguyen686868/cicdpipeline
-- S3: https://udapeople-7309f2c.s3.amazonaws.com/index.html
+- S3: http://udapeople-62db1ae.s3.amazonaws.com/index.html#/employees
